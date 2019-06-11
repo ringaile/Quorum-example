@@ -1,17 +1,17 @@
-pragma solidity ^0.4.17;
+pragma solidity >=0.5.0;
 
 contract SimpleStorage {
-  uint public storedData;
-
-  function SimpleStorage(uint initVal) public {
-    storedData = initVal;
+// declare variable
+  string storedData;
+    
+  
+  function set(string memory x) public {
+  // Store the string inside the Contract
+        storedData = x;
   }
-
-  function set(uint x) public {
-    storedData = x;
-  }
-
-  function get() view public returns (uint retVal) {
-    return storedData;
+    
+  function get() public view returns (string memory retVal) {
+  // Retrieve the value when calling the function
+        return storedData;
   }
 }
